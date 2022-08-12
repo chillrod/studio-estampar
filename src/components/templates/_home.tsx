@@ -1,4 +1,4 @@
-import { Container, Box, chakra, Link, Flex, Stack, Heading, Grid, GridItem, Text, Img, Button } from "@chakra-ui/react"
+import { Container, Box, chakra, Link, Flex, Stack, Heading, Grid, Text, Img, Button } from "@chakra-ui/react"
 import Image from "next/image"
 import { ArrowRightCircle, Instagram, Phone } from 'react-feather'
 
@@ -35,13 +35,13 @@ export const HomePage = () => {
     ]
 
     return (
-        <Grid gap={5} bg="gray.900">
-            <GridItem justifySelf="fill">
+        <Flex gap={5} bg="gray.900" direction="column">
+            <Box justifySelf="fill">
                 <Box bg="gray.100" p={5}>
                     <Flex alignItems="center" justifyContent="space-between">
                         <Image
                             src="/studio logo.webp"
-                            width="150px" height="150px"
+                            width="100px" height="100px"
                             objectFit="contain"
                         />
                         <Flex>
@@ -61,16 +61,16 @@ export const HomePage = () => {
                         </Flex>
                     </Box>
                 </Box>
-            </GridItem>
-            <GridItem justifySelf="start" p={7} color="gray.100">
+            </Box>
+            <Box justifySelf="start" p={7} color="gray.100">
                 <Heading fontSize="3.2em" lineHeight={1.2} maxW={700} fontWeight={700}>
                     Meu tamanho de camiseta
                 </Heading>
                 <Text mt={3} fontSize="2xl">
                     Escolha qual desses modelos combina com você.
                 </Text>
-            </GridItem>
-            <GridItem bg="gray.100" p={4}>
+            </Box>
+            <Box bg="gray.100" p={4}>
 
                 <Flex
                     overflow="auto"
@@ -83,7 +83,7 @@ export const HomePage = () => {
                             key={index}
                             size="2xl"
                             boxShadow="2xl"
-                            p={3}
+                            p={2}
                         >
                             <Flex
                                 w="250px"
@@ -108,7 +108,7 @@ export const HomePage = () => {
                         </Button>
                     ))}
                 </Flex>
-            </GridItem>
-        </Grid>
+            </Box>
+        </Flex>
     )
 }
